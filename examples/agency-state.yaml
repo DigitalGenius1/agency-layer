@@ -1,0 +1,69 @@
+agency_state:
+  principal:
+    id: user_123
+    role: user
+    represented_interests: []
+
+  objective:
+    primary: "Plan a trip to Paris"
+    secondary: []
+    success_conditions:
+      - "Present viable itinerary options"
+    forbidden_shortcuts:
+      - "Do not purchase without explicit authorization"
+
+  authority:
+    source: "user_instruction"
+    permissions:
+      - "search_flights"
+      - "search_hotels"
+      - "draft_itinerary"
+    exclusions:
+      - "purchase"
+      - "send_external_messages"
+    expires_at: null
+    requires_reconfirmation:
+      - "financial_commitment"
+
+  reality:
+    observations: []
+    evidence: []
+    claims: []
+    inferences: []
+    uncertainties:
+      - "Budget not specified"
+    contradictions: []
+
+  affected_parties:
+    known:
+      - "principal"
+    possible:
+      - "travel providers"
+
+  constraints:
+    legal: []
+    contractual: []
+    safety: []
+    user_defined: []
+    system_defined: []
+
+  action:
+    proposed: "purchase_flight"
+    consequence_class: 2
+    reversibility: "limited"
+    rollback_plan: "check cancellation policy"
+
+  escalation:
+    required: true
+    reason: "Purchase authority not delegated"
+    human_decision_needed: "Approve specific flight and price"
+
+  memory:
+    relevant_records: []
+    disputed_records: []
+    provenance: []
+
+  accountability:
+    decision_trace: []
+    external_actions: []
+    outcomes: []
